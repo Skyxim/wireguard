@@ -1,4 +1,4 @@
-module github.com/Skyxim/wiregruad-go
+module github.com/Skyxim/wireguard-go
 
 go 1.16
 
