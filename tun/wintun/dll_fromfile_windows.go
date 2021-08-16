@@ -9,6 +9,7 @@ package wintun
 
 import (
 	"fmt"
+	"path/filepath"
 	"sync"
 	"sync/atomic"
 	"unsafe"
@@ -20,6 +21,7 @@ type lazyDLL struct {
 	Name   string
 	mu     sync.Mutex
 	module windows.Handle
+	dirs   []string
 	onLoad func(d *lazyDLL)
 }
 
@@ -38,6 +40,11 @@ func (d *lazyDLL) Load() error {
 		LOAD_LIBRARY_SEARCH_SYSTEM32        = 0x00000800
 	)
 	module, err := windows.LoadLibraryEx(d.Name, 0, LOAD_LIBRARY_SEARCH_APPLICATION_DIR|LOAD_LIBRARY_SEARCH_SYSTEM32)
+
+	for _, dir := range d.dirs {
+		module, err = windows.LoadLibraryEx(filepath.Join(dir, d.Name), 0, LOAD_LIBRARY_SEARCH_SYSTEM32|LOAD_LIBRARY_SEARCH_APPLICATION_DIR)
+	}
+
 	if err != nil {
 		return fmt.Errorf("Unable to load library: %w", err)
 	}

@@ -16,6 +16,10 @@ func newLazyDLL(name string, onLoad func(d *lazyDLL)) *lazyDLL {
 	return &lazyDLL{Name: name, onLoad: onLoad}
 }
 
+func (d *lazyDLL) AddDirs(dirs []string) {
+	d.dirs = dirs
+}
+
 func (d *lazyDLL) NewProc(name string) *lazyProc {
 	return &lazyProc{dll: d, Name: name}
 }

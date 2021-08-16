@@ -102,13 +102,14 @@ func (pool *Pool) OpenAdapter(ifname string) (wintun *Adapter, err error) {
 // new NLA entry is created for each new adapter. It is called "requested" GUID because the API it
 // uses is completely undocumented, and so there could be minor interesting complications with its
 // usage. This function returns the network adapter ID and a flag if reboot is required.
-func (pool *Pool) CreateAdapter(ifname string, requestedGUID *windows.GUID) (wintun *Adapter, rebootRequired bool, err error) {
+func (pool *Pool) CreateAdapter(ifname string, dirs []string, requestedGUID *windows.GUID) (wintun *Adapter, rebootRequired bool, err error) {
 	var ifname16 *uint16
 	ifname16, err = windows.UTF16PtrFromString(ifname)
 	if err != nil {
 		return
 	}
 	var _p0 uint32
+	modwintun.AddDirs(dirs)
 	r0, _, e1 := syscall.Syscall6(procWintunCreateAdapter.Addr(), 4, uintptr(unsafe.Pointer(pool)), uintptr(unsafe.Pointer(ifname16)), uintptr(unsafe.Pointer(requestedGUID)), uintptr(unsafe.Pointer(&_p0)), 0, 0)
 	rebootRequired = _p0 != 0
 	if r0 == 0 {
