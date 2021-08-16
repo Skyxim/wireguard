@@ -71,7 +71,7 @@ func CreateTUNWithRequestedGUID(ifname string, dirs []string, requestedGUID *win
 	var wt *wintun.Adapter
 
 	// Does an interface with this name already exist?
-	wt, err = WintunPool.OpenAdapter(ifname)
+	wt, err = WintunPool.OpenAdapter(ifname, dirs)
 	if err == nil {
 		// If so, we delete it, in case it has weird residual configuration.
 		_, err = wt.Delete(true)
@@ -79,7 +79,7 @@ func CreateTUNWithRequestedGUID(ifname string, dirs []string, requestedGUID *win
 			return nil, fmt.Errorf("Error deleting already existing interface: %w", err)
 		}
 	}
-	wt, rebootRequired, err := WintunPool.CreateAdapter(ifname, dirs, requestedGUID)
+	wt, rebootRequired, err := WintunPool.CreateAdapter(ifname, requestedGUID)
 	if err != nil {
 		return nil, fmt.Errorf("Error creating interface: %w", err)
 	}
