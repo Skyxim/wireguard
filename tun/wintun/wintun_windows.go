@@ -7,7 +7,6 @@ package wintun
 
 import (
 	"errors"
-	"log"
 	"runtime"
 	"syscall"
 	"unsafe"
@@ -50,7 +49,6 @@ var (
 
 func setupLogger(dll *lazyDLL) {
 	syscall.Syscall(dll.NewProc("WintunSetLogger").Addr(), 1, windows.NewCallback(func(level loggerLevel, msg *uint16) int {
-		log.Println("[Wintun]", windows.UTF16PtrToString(msg))
 		return 0
 	}), 0, 0)
 }
