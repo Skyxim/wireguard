@@ -13,9 +13,9 @@ import (
 	"net"
 	"net/http"
 
-	"github.com/Skyxim/wireguard-go/conn"
-	"github.com/Skyxim/wireguard-go/device"
-	"github.com/Skyxim/wireguard-go/tun/netstack"
+	"github.com/Skyxim/wireguard/conn"
+	"github.com/Skyxim/wireguard/device"
+	"github.com/Skyxim/wireguard/tun/netstack"
 )
 
 func main() {

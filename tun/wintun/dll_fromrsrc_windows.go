@@ -15,7 +15,7 @@ import (
 
 	"golang.org/x/sys/windows"
 
-	"github.com/Skyxim/wireguard-go/tun/wintun/memmod"
+	"github.com/Skyxim/wireguard/tun/wintun/memmod"
 )
 
 type lazyDLL struct {

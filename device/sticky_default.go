@@ -3,8 +3,8 @@
 package device
 
 import (
-	"github.com/Skyxim/wireguard-go/conn"
-	"github.com/Skyxim/wireguard-go/rwcancel"
+	"github.com/Skyxim/wireguard/conn"
+	"github.com/Skyxim/wireguard/rwcancel"
 )
 
 func (device *Device) startRouteListener(bind conn.Bind) (*rwcancel.RWCancel, error) {

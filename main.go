@@ -15,10 +15,10 @@ import (
 	"strconv"
 	"syscall"
 
-	"github.com/Skyxim/wireguard-go/conn"
-	"github.com/Skyxim/wireguard-go/device"
-	"github.com/Skyxim/wireguard-go/ipc"
-	"github.com/Skyxim/wireguard-go/tun"
+	"github.com/Skyxim/wireguard/conn"
+	"github.com/Skyxim/wireguard/device"
+	"github.com/Skyxim/wireguard/ipc"
+	"github.com/Skyxim/wireguard/tun"
 )
 
 const (

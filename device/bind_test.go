@@ -8,7 +8,7 @@ package device
 import (
 	"errors"
 
-	"github.com/Skyxim/wireguard-go/conn"
+	"github.com/Skyxim/wireguard/conn"
 )
 
 type DummyDatagram struct {

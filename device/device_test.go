@@ -19,9 +19,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Skyxim/wireguard-go/conn"
-	"github.com/Skyxim/wireguard-go/conn/bindtest"
-	"github.com/Skyxim/wireguard-go/tun/tuntest"
+	"github.com/Skyxim/wireguard/conn"
+	"github.com/Skyxim/wireguard/conn/bindtest"
+	"github.com/Skyxim/wireguard/tun/tuntest"
 )
 
 // uapiCfg returns a string that contains cfg formatted use with IpcSet.

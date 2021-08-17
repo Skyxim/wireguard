@@ -1,5 +1,4 @@
-module github.com/Skyxim/wireguard-go
-
+module github.com/Skyxim/wireguard
 go 1.16
 
 require (

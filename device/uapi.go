@@ -18,7 +18,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/Skyxim/wireguard-go/ipc"
+	"github.com/Skyxim/wireguard/ipc"
 )
 
 type IPCError struct {

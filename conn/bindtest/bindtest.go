@@ -12,7 +12,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/Skyxim/wireguard-go/conn"
+	"github.com/Skyxim/wireguard/conn"
 )
 
 type ChannelBind struct {

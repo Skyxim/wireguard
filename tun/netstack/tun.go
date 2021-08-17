@@ -18,7 +18,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Skyxim/wireguard-go/tun"
+	"github.com/Skyxim/wireguard/tun"
 
 	"golang.org/x/net/dns/dnsmessage"
 	"gvisor.dev/gvisor/pkg/tcpip"

@@ -15,7 +15,7 @@ import (
 	"time"
 	_ "unsafe"
 
-	"github.com/Skyxim/wireguard-go/tun/wintun"
+	"github.com/Skyxim/wireguard/tun/wintun"
 	"golang.org/x/sys/windows"
 )
 

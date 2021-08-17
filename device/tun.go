@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"sync/atomic"
 
-	"github.com/Skyxim/wireguard-go/tun"
+	"github.com/Skyxim/wireguard/tun"
 )
 
 const DefaultMTU = 1420

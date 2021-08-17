@@ -21,7 +21,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Skyxim/wireguard-go/ipc/winpipe"
+	"github.com/Skyxim/wireguard/ipc/winpipe"
 	"golang.org/x/sys/windows"
 )
 

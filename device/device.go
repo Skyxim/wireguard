@@ -11,10 +11,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/Skyxim/wireguard-go/conn"
-	"github.com/Skyxim/wireguard-go/ratelimiter"
-	"github.com/Skyxim/wireguard-go/rwcancel"
-	"github.com/Skyxim/wireguard-go/tun"
+	"github.com/Skyxim/wireguard/conn"
+	"github.com/Skyxim/wireguard/ratelimiter"
+	"github.com/Skyxim/wireguard/rwcancel"
+	"github.com/Skyxim/wireguard/tun"
 )
 
 type Device struct {
